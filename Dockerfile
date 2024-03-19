@@ -1,12 +1,13 @@
 #基础镜像
 FROM alpine:latest
 #声明维护者
-LABEL maintainer="jamesji"
+LABEL maintainer="jji@amua.nz"
 #要执行的命令   这里是在docker容器中创建了一个新的目录
 RUN mkdir "/app"
+
 #外部传入参数
-ARG TargetImage
-RUN echo "TargetImage: ${TargetImage}"
+#ARG TargetImage
+#RUN echo "TargetImage: ${TargetImage}"
 #指定工作目录
 WORKDIR "/app"
 #暴露容器内的端口   这里的8081是go-gin启动时的服务端口,
@@ -15,8 +16,9 @@ EXPOSE 8081/tcp
 
 #ARG exeName
 #将编译后的可执行文件 copy到工作目录中
-COPY ${TargetImage} /app/targetImage
+#COPY ${TargetImage} /app/targetImage
+COPY jamesjionenz/test /app/jamesjionenz/test
 
 #ARG exeName
 #ARG TargetImage
-ENTRYPOINT ["./targetImage"]
+ENTRYPOINT ["./jamesjionenz/test"]
