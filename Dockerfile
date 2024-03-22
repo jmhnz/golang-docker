@@ -1,7 +1,7 @@
 #基础镜像
 FROM alpine:latest
 #声明维护者
-LABEL maintainer="jji@amua.nz"
+LABEL maintainer="JamesJi"
 #要执行的命令   这里是在docker容器中创建了一个新的目录
 RUN mkdir "/app"
 
@@ -17,8 +17,8 @@ EXPOSE 8081/tcp
 #ARG exeName
 #将编译后的可执行文件 copy到工作目录中
 #COPY ${TargetImage} /app/targetImage
-COPY jamesjionenz/test /app/jamesjionenz/test
+COPY jamesji86/test /app/jamesji86/test
 
 #ARG exeName
 #ARG TargetImage
-ENTRYPOINT ["./jamesjionenz/test"]
+ENTRYPOINT ["./jamesji86/test"]

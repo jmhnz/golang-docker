@@ -1,11 +1,11 @@
 #!/bin/bash
 
 #go build
-GOOS=linux GOARCH=amd64 go build -o jamesjionenz/test ./...
+GOOS=linux GOARCH=amd64 go build -o jamesji86/test ./...
 
 #docker build
-docker build -t jamesjionenz/test:1.2 .
+docker build -t jamesji86/test:1.2 .
 
 #dockerhub push
 docker login
-docker push jamesjionenz/test:1.2
+docker push jamesji86/test:1.2
